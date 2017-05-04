@@ -6,6 +6,10 @@ Carsales is a clone website built with [ASP.NET Core MVC](https://github.com/asp
 
 ## Installation
 
+### .NET Core
+
+Go to https://www.microsoft.com/net/core, select your OS and follow the installation guide. At the time of writing, the latest version is .NET Core 1.1.
+
 ### Nuget packages
 
 If you can, restore the Nuget package dependencies/dlls of all projects with your IDE, then build the solution. Otherwise, at the root of the solution, run:
@@ -45,10 +49,6 @@ $ dotnet ef database update
 ```
 
 The database will get populated automatically the first time you run the website (see `DbInitializer.cs`).
-
-### .NET Core
-
-Go to https://www.microsoft.com/net/core, select your OS and follow the installation guide. At the time of writing, the latest version is .NET Core 1.1.
 
 
 ## Usage
