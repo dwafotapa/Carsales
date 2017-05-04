@@ -1,0 +1,30 @@
+@model CarDetailsViewModel
+@{
+    ViewData["Title"] = Model.Name;
+    ViewData["BodyClassName"] = "page-details";
+    ViewData["CarId"] = Model.Id;
+}
+
+<div class="details-container">
+    <div class="nav-subheader">
+        <a asp-action="Index"><span class="glyphicon glyphicon-chevron-left"></span>Back to the cars</a>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="h3 name">@Model.Name</div>
+            <div class="@(Model.SellerDetailsViewModel.IsPrivateSellerCar ? "private" : "dealer")">@Model.SellerDetailsViewModel.SellerTypeText</div>
+            <div class="price-container">
+                <div class="price">@Model.Price</div>
+                <div class="price-desc">@Model.PriceDesc</div>
+            </div>
+            <div class="comments-container">
+                <p class="h5">@Model.SellerDetailsViewModel.SellerTypeText's Comment</p>
+                <p class="comments">@Model.Comments</p>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            @Html.Partial("_EnquiryAdd", Model.EnquiryAddViewModel)
+            @Html.Partial("_SellerDetails", Model.SellerDetailsViewModel)
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+@model SellerDetailsViewModel
+
+<div class="panel @(Model.IsPrivateSellerCar ? "panel-private" : "panel-dealer")">
+    <div class="panel-body">
+        <div class="h4">@Model.SellerTypeText's Details</div>
+        <table class="table table-condensed">
+            <tbody>
+                @if (Model.IsPrivateSellerCar)
+                {
+                    <tr>
+                        <td>Contact Name</td>
+                        <td>@Model.ContactName</td>
+                    </tr>
+                    <tr>
+                        <td>Phone</td>
+                        <td>@Model.Phone</td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td><a href="mailto:@Model.Email">@Model.Email</a></td>
+                    </tr>
+                } else {
+                    <tr>
+                        <td>Email</td>
+                        <td><a href="mailto:@Model.Email">@Model.Email</a></td>
+                    </tr>
+                    <tr>
+                        <td>ABN</td>
+                        <td>@Model.DealerABN</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

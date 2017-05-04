@@ -1,0 +1,33 @@
+﻿@inject IOptions<AppSettings> AppSettingsOptions
+@model ICollection<CarIndexViewModel>
+@{
+    ViewData["Title"] = "Listing - Car";
+    ViewData["BodyClassName"] = "page-listing";
+}
+
+<div class="listing-container">
+    <div class="h4">@Model.Count Car@(Model.Count == 1 ? "" : "s") For Sale</div>
+    @foreach (var car in Model)
+    {
+        var comments = car.Comments.Length <= AppSettingsOptions.Value.CommentsWithEllipsisBreakpoint
+            ? car.Comments
+            : car.Comments.Substring(0, AppSettingsOptions.Value.CommentsWithEllipsisBreakpoint) + "...";
+        
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <a asp-action="Details" asp-route-id="@car.Id" class="h4">@car.Name</a>
+            </div>
+            <div class="panel-body">
+                <div class="comments">"@comments"</div>
+                <div class="price-container pull-right text-right">
+                    <div class="price">@car.Price</div>
+                    <div class="price-desc">@car.PriceDesc</div>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <span class="@(car.IsPrivateSellerCar ? "private" : "dealer")">@car.SellerTypeText</span>
+                <a asp-action="Details" asp-route-id="@car.Id" class="btn btn-primary btn-sm pull-right" role="button">View</a>
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,19 @@
+@model EnquiryAddViewModel
+
+<div class="panel panel-enquiry">
+    <div class="panel-body">
+        <p class="h4">Enquire on this car</p>
+        <p>Your details will only be sent to the seller of this car and no one else.</p>
+        <form asp-controller="Enquiry" asp-action="Add" asp-route-id="@ViewData["CarId"]" method="post">
+            <div class="form-group">
+                <input class="form-control" asp-for="Name" placeholder="Name" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input class="form-control" asp-for="Email" placeholder="Email" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-warning btn-lg">Send Enquiry</button>
+        </form>
+    </div>
+</div>
