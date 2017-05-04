@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using AutoMapper;
 using Carsales.Web.Controllers;
 using Carsales.Core.Domain;
-using Carsales.Web.UnitTests.Extensions;
 using Carsales.Web.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Moq;

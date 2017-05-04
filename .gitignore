@@ -1,4 +1,6 @@
 .DS_Store
 bin/
 obj/
-wwwroot/lib/
+Carsales.Web/wwwroot/lib/
+Carsales.Web/wwwroot/js/site.min.js
+Carsales.Web/wwwroot/css/site.min.css

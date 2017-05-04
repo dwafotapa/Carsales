@@ -22,7 +22,7 @@ bower install
 
 ### SQLite
 
-Carsales uses an [SQLite](https://www.sqlite.org/) database that lives here: `bin/Debug/netcoreapp1.1/Carsales.db`.
+Carsales uses an [SQLite](https://www.sqlite.org/) database that lives in `bin/Debug/netcoreapp1.1/Carsales.db`.
 
 Click [here](https://www.sqlite.org/download.html) if you need to install SQLite on your operating system.
 
