@@ -8,10 +8,11 @@ Carsales is a clone website built with [ASP.NET Core MVC](https://github.com/asp
 
 ### Bower packages
 
-Go to your CLI and run the command below in the `Carsales.Web` project's folder:
+In a command line window, run:
 
 ```sh
-bower install
+$ cd Carsales.Web
+$ bower install
 ```
 
 The command will install the following [Bower](https://bower.io/) packages:
@@ -23,14 +24,17 @@ The command will install the following [Bower](https://bower.io/) packages:
 
 ### SQLite
 
-Go to https://www.sqlite.org/download.html and follow the installation guideline if you need to install SQLite on your OS.
+Go to https://www.sqlite.org/download.html and follow the installation guideline if you need to install SQLite.
 
-To initialize the database, execute this command in your `Carsales.Web` project's folder:
+If you want to reset the database, delete the `Carsales.db` file first:
 ```sh
-dotnet ef database update
+$ rm -f bin/Debug/netcoreapp1.1/Carsales.db
 ```
 
-If you want to reset the database, delete the `Carsales.Web/bin/Debug/netcoreapp1.1/Carsales.db` file first and execute the command above.
+To initialize the database, run:
+```sh
+$ dotnet ef database update
+```
 
 The database will get populated automatically the first time you run the website (see `DbInitializer.cs`).
 
@@ -41,17 +45,17 @@ Go to https://www.microsoft.com/net/core, select your OS and follow the installa
 
 ## Usage
 
-If you can, build your project with your IDE and run it. Otherwise, run this command in your `Carsales.Web` project's folder:
+If you can, build your project with your IDE and run it. Otherwise, run:
 ```sh
-dotnet build
+$ dotnet build
 ```
 
-To run the website, run this command:
+Run the website:
 ```sh
-dotnet run
+$ dotnet run
 ```
 
-Now, go to http://localhost:5000/. And voila!
+Carsales is now up and running at http://localhost:5000/.
 
 
 ## Concepts
@@ -67,7 +71,8 @@ High level modules should not depend on low-level modules, both should depend on
 
 ### Repositories
 
-Carsales uses repositories. They are an extra layer that aims to encapsulate the business/data access logic in one place for better code reusability and extension.
+Repositories are an extra layer that aims to encapsulate the business/data access logic in one place for better code reusability and extension.
+Carsales uses one repository per domain entity: one for Cars and one for Enquiries.
 
 ### AutoMapper
 
@@ -78,8 +83,14 @@ Carsales uses AutoMapper. Its purpose is two-fold:
 
 ### Unit Tests with xUnit and Moq
 
-The `Carsales.Web.UnitTests` project contains unit tests for our controllers' methods. It uses the unit testing framework `xUnit` and the mocking framework `Moq`.
+The `Carsales.Web.UnitTests` project contains unit tests.
+It uses the unit testing framework `xUnit` and the mocking framework `Moq`.
 
+To run the tests:
+```sh
+$ cd ../Carsales.Web.UnitTests
+$ dotnet xunit
+```
 
 ## Notes
 
