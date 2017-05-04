@@ -8,32 +8,50 @@ Carsales is a clone website built with [ASP.NET Core MVC](https://github.com/asp
 
 ### Bower packages
 
-Carsales uses the following [Bower](https://bower.io/) packages:
-
-* [Bootstrap](http://getbootstrap.com/)
-* [jQuery](https://jquery.com/)
-* [jQuery Validation](https://jqueryvalidation.org/)
-
-To install them, go to your command line and run the command below in the `Carsales.Web` project's folder:
+Go to your CLI and run the command below in the `Carsales.Web` project's folder:
 
 ```sh
 bower install
 ```
 
+The command will install the following [Bower](https://bower.io/) packages:
+
+* [Bootstrap](http://getbootstrap.com/)
+* [jQuery](https://jquery.com/)
+* [jQuery Validation](https://jqueryvalidation.org/)
+
+
 ### SQLite
 
-Carsales uses an [SQLite](https://www.sqlite.org/) database that lives in `Carsales.Web/bin/Debug/netcoreapp1.1/Carsales.db`.
+Go to https://www.sqlite.org/download.html and follow the installation guideline if you need to install SQLite on your OS.
 
-Click [here](https://www.sqlite.org/download.html) if you need to install SQLite on your operating system.
-
-To initialize the database, execute this command in the `Carsales.Web` project's folder:
+To initialize the database, execute this command in your `Carsales.Web` project's folder:
 ```sh
 dotnet ef database update
 ```
 
 If you want to reset the database, delete the `Carsales.Web/bin/Debug/netcoreapp1.1/Carsales.db` file first and execute the command above.
 
-Then, the database gets populated automatically the first time you run the website (see `DbInitializer.cs`).
+The database will get populated automatically the first time you run the website (see `DbInitializer.cs`).
+
+### .NET Core
+
+Go to https://www.microsoft.com/net/core, select your OS and follow the installation guide. At the time of writing, the latest version is .NET Core 1.1.
+
+
+## Usage
+
+If you can, build your project with your IDE and run it. Otherwise, run this command in your `Carsales.Web` project's folder:
+```sh
+dotnet build
+```
+
+To run the website, run this command:
+```sh
+dotnet run
+```
+
+Now, go to http://localhost:5000/. And voila!
 
 
 ## Concepts
