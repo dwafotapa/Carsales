@@ -6,6 +6,14 @@ Carsales is a clone website built with [ASP.NET Core MVC](https://github.com/asp
 
 ## Installation
 
+### Nuget packages
+
+If you can, restore the Nuget package dependencies/dlls of all projects with your IDE, then build the solution. Otherwise, at the root of the solution, run:
+```sh
+$ dotnet restore
+$ dotnet build
+```
+
 ### Bower packages
 
 In a command line window, run:
@@ -45,18 +53,18 @@ Go to https://www.microsoft.com/net/core, select your OS and follow the installa
 
 ## Usage
 
-If you can, build your project with your IDE and run it. Otherwise, run:
-```sh
-$ dotnet build
-```
-
-Run the website:
+Start the website with your IDE (Debug > Start Without Debugging) or execute:
 ```sh
 $ dotnet run
 ```
 
 Carsales is now up and running at http://localhost:5000/.
 
+To run the tests:
+```sh
+$ cd ../Carsales.Web.UnitTests
+$ dotnet xunit
+```
 
 ## Concepts
 
@@ -76,21 +84,16 @@ Carsales uses one repository per domain entity: one for Cars and one for Enquiri
 
 ### AutoMapper
 
-Carsales uses AutoMapper. Its purpose is two-fold:
+[AutoMapper](http://automapper.org/)'s purpose is two-fold:
 
 * mapping one object's properties to another object
 * cleaning up your controllers' actions by getting rid of mapping code that bloats them up and organize them in Profiles
 
-### Unit Tests with xUnit and Moq
+### Unit Tests
 
-The `Carsales.Web.UnitTests` project contains unit tests.
-It uses the unit testing framework `xUnit` and the mocking framework `Moq`.
+The `Carsales.Web.UnitTests` project contains unit tests using [xUnit](https://xunit.github.io/) and [Moq](https://github.com/moq/moq4).
+I have structured my tests so that there's a test class per class being tested and a nested class for each method being tested. Easy to read and a nice way to keep track of what has been tested.
 
-To run the tests:
-```sh
-$ cd ../Carsales.Web.UnitTests
-$ dotnet xunit
-```
 
 ## Notes
 
