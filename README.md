@@ -26,10 +26,12 @@ Carsales uses an [SQLite](https://www.sqlite.org/) database that lives here: `bi
 
 Click [here](https://www.sqlite.org/download.html) if you need to install SQLite on your operating system.
 
-To initialize/reset the database, delete the `bin/Debug/netcoreapp1.1/Carsales.db` file and execute this command in the `Carsales.Web` project's folder:
+To initialize the database, execute this command in the `Carsales.Web` project's folder:
 ```sh
 dotnet ef database update
 ```
+
+If you want to reset the database, delete the `bin/Debug/netcoreapp1.1/Carsales.db` file first and execute the command above.
 
 Then, the database gets populated automatically the first time you run the website (see `DbInitializer.cs`).
 
