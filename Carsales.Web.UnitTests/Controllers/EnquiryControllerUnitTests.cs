@@ -41,9 +41,9 @@ namespace Carsales.Web.UnitTests.Controllers
                 var result = (RedirectToActionResult)_controller.Add(id: carId, model: new EnquiryAddViewModel());
 
                 Assert.IsType<RedirectToActionResult>(result);
-                Assert.Equal(result.ControllerName, "Car");
-                Assert.Equal(result.ActionName, "Details");
-                Assert.Equal(result.RouteValues["Id"], carId);
+                Assert.Equal("Car", result.ControllerName);
+                Assert.Equal("Details", result.ActionName);
+                Assert.Equal(carId, result.RouteValues["Id"]);
             }
 
             [Fact]
@@ -70,7 +70,7 @@ namespace Carsales.Web.UnitTests.Controllers
                 var result = (RedirectToActionResult)_controller.Add(id: car.Id, model: model);
 
                 Assert.IsType<RedirectToActionResult>(result);
-                Assert.Equal(result.ActionName, "ThankYou");
+                Assert.Equal("ThankYou", result.ActionName);
             }
         }
     }

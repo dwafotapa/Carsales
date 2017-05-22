@@ -56,7 +56,7 @@ namespace Carsales.Web.UnitTests.Controllers
 
                 var viewResult = Assert.IsType<ViewResult>(result);
                 var viewModel = Assert.IsType<CarDetailsViewModel>(viewResult.Model);
-                Assert.Equal(viewModel.Id, car.Id);
+                Assert.Equal(car.Id, viewModel.Id);
             }
         }
     }

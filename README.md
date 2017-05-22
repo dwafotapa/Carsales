@@ -10,14 +10,6 @@ Carsales is a clone website built with [ASP.NET Core MVC](https://github.com/asp
 
 Go to https://www.microsoft.com/net/core, select your OS and follow the installation guide. At the time of writing, the latest version is .NET Core 1.1.
 
-### Nuget packages
-
-If you can, restore the Nuget package dependencies/dlls of all projects with your IDE, then build the solution. Otherwise, at the root of the solution, run:
-```sh
-$ dotnet restore
-$ dotnet build
-```
-
 ### Bower packages
 
 In a command line window, run:
@@ -33,6 +25,13 @@ The command will install the following [Bower](https://bower.io/) packages:
 * [jQuery](https://jquery.com/)
 * [jQuery Validation](https://jqueryvalidation.org/)
 
+### Nuget packages
+
+If you can, restore the Nuget package dependencies/dlls of all projects with your IDE, then build the solution. Otherwise, at the root of the solution, run:
+```sh
+$ dotnet restore
+$ dotnet build
+```
 
 ### SQLite
 
@@ -63,6 +62,8 @@ Carsales is now up and running at http://localhost:5000/.
 To run the tests:
 ```sh
 $ cd ../Carsales.Web.UnitTests
+$ dotnet restore
+$ dotnet build
 $ dotnet xunit
 ```
 
